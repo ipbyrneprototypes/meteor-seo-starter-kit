@@ -1,0 +1,38 @@
+<template name="articleItem">
+	<div class="col-md-4 article-item-div">
+		<a href="{{pathFor 'articlePage'}}" style="text-decoration:none;">
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading text-center">
+						<h2>{{title}}</h2>
+					</div>
+					<div class="panel-body">
+						<div class="col-sm-12 text-center">
+							<img class="img-thumbnail" src="{{thumb}}"/>
+						</div>
+						<div class="col-sm-12">
+							<div id="body-preview">
+								{{#markdown}}{{body}}{{/markdown}}
+								<div id="fade"></div>
+							</div>
+						</div>
+						
+						<div class="col-xs-12 text-center">
+							<h4>- Read More -</h4>
+						</div>
+					</div>
+					<div class="panel-footer text-center">
+						<br>
+						<div id="user" class="hide">{{useremail}}</div>
+						<img class="img-circle" width="25" src="{{gravatarImgUrl}}" />
+						<a class="article-item-name" href="{{pathFor 'userPage'}}">by {{useremail}}</a>
+						<br>
+						<br>   <button class="article-item-upvote btn btn-default btn-sm"><i class="fa fa-heart"></i> {{likes}}</button>   <button class="article-item-comment btn btn-default btn-sm" href="{{pathFor 'articlePage'}}"><i class="fa fa-comment"></i> {{commentCount}} </button>
+						<br>
+						<br>   <span class="article-item-date">{{formatDate submitted}}</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</template>

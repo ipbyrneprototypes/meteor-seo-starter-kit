@@ -1,0 +1,24 @@
+<template name="submitArticle">
+	<div class="col-xs-12">
+		{{#if currentUser}}
+			<div class="form-group">
+				<label>Title</label>
+				<input type="text" name="title" id="title" class="form-control"/>
+				<br>
+				<label>Body</label>
+				<div id="summernote" class="body"></div>
+				<br>
+				<br>
+				<label>Thumbnail URL</label>
+				<input type="text" name="thumbnail" id="thumbnailURL" class="form-control"/>
+			</div>
+			<div class="col-xs-12 text-right">
+				<br>
+				<button class="btn save btn-info">Save as Draft</button>
+				<button class="btn submit btn-primary">Publish</button>
+			</div>
+		{{else}}
+			<h1>Whoops, you must be <a href="/sign-in">Logged In</a> to do this!</h1>
+		{{/if}}
+	</div>
+</template>
